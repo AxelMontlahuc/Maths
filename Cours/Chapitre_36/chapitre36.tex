@@ -6,4 +6,22 @@
 \tableofcontents
 \clearpage
 
+\setsection{14}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 36.15, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Les projections $(x, y)\mapsto \sqrt{x^2 + y^2}$ est continue sur $\mathbb{R}^2$. 
+\end{tcolorbox}
+
+\noindent Soit $a = (x_0, y_0)\in \mathbb{R}^2$. On note : 
+\begin{align*}
+    p_1:&\mathbb{R}^2\to \mathbb{R} \\
+    &(x, y)\mapsto x
+\end{align*}
+Soit $\epsilon > 0$, pour tout $(x, y)\in B(a, \epsilon)$. 
+\begin{align*}
+    |p_1(x, y) - p_1(x_0, y_0)| = |x - x_0| \leq \| (x, y) - (x_0, y_0)\|
+\end{align*}
+Donc $p_1$ est bien continue en $a$, donc sur $\mathbb{R}^2$. 
+
+
 \end{document}
