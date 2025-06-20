@@ -23,5 +23,30 @@ Soit $\epsilon > 0$, pour tout $(x, y)\in B(a, \epsilon)$.
 \end{align*}
 Donc $p_1$ est bien continue en $a$, donc sur $\mathbb{R}^2$. 
 
+\setsection{16}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 36.17, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soi t$I$ et $J$ deux intervalles et $f\in \mathcal{C}(I, \mathbb{R})$ et $g\in \mathcal{C}(J, \mathbb{R})$. Alors : 
+    \begin{align*}
+        I\times J\to \mathbb{R}^2; (x, y)\mapsto f(x) + g(y) \quad \text{et} \quad I\times J\to \mathbb{R}^2; (x, y)\mapsto f(x)g(y)
+    \end{align*}
+    sont continues sur $I\times J$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Soit $(x_0, y_0)\in I\times J$. \\
+    Soit $\epsilon > 0$. \\
+    Par continuité de $f$ et $g$ on choisit $\alpha > 0$ tel que : 
+    \begin{itemize}
+        \item $\forall x\in I, |x - x_0| < \alpha \Rightarrow |f(x) - f(x_0)| < \epsilon$
+        \item $\forall y\in J, |y - y_0| < \alpha \Rightarrow |g(y) - g(y_0)| < \epsilon$
+    \end{itemize}
+    Soit $(x, y)\in B((x_0, y_0), \alpha)$. 
+    \begin{align*}
+        |f(x) + g(y) - f(x_0) - g(y_0)| &\leq |f(x) - f(x_0)| + |g(y) - g(y_0)|
+    \end{align*}
+    \item De la même manière (voir le produit de fonctions de $\mathcal{C}^0$, chap. 15). 
+\end{itemize}
+
 
 \end{document}
