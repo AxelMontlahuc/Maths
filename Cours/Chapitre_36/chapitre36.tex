@@ -48,5 +48,30 @@ Donc $p_1$ est bien continue en $a$, donc sur $\mathbb{R}^2$.
     \item De la même manière (voir le produit de fonctions de $\mathcal{C}^0$, chap. 15). 
 \end{itemize}
 
+\setsection{23}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 36.24, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Quelles sont les dérivées partielles de la fonction $f:(x, y)\mapsto e^{xy^2}$ ?
+\end{tcolorbox}
+
+\noindent Sous réserve d'existence : 
+\begin{align*}
+    \forall (x, y)\in \mathbb{R}^2, \partial_1f(x, y) &= y^2 e^{xy^2} \\
+    \partial_2f(x, y) &= 2xy e^{xy^2}
+\end{align*}
+Démonstration de la première : \\
+Soit ($x, y)\in \mathbb{R}^2$. 
+\begin{align*}
+    \forall t\in \mathbb{R}, f((x, y) + t(1, 0)) &= f(x + t, y) \\
+    &= e^{(x + t)y^2} \\
+    &= e^{xy^2 + ty^2} \\
+    &= g(t)
+\end{align*}
+Donc $g\in \mathcal{D}'(\mathbb{R}, \mathbb{R})$ et : 
+\begin{align*}
+    \forall t\in \mathbb{R}, g'(t) &= y^2 e^{xy^2 + ty^2} \\
+    g'(0) &= y^2 e^{xy^2}
+\end{align*}
+
 
 \end{document}
