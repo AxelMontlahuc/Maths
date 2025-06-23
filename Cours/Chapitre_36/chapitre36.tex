@@ -85,4 +85,44 @@ Donc $g\in \mathcal{D}'(\mathbb{R}, \mathbb{R})$ et :
 \end{align*}
 Par opérations. 
 
+\setsection{37}
+\section{Existence de développement limité à l'ordre 1 pour les fonctions de classe $\mathcal{C}^1$}
+\begin{tcolorbox}[title=Théorème 36.38, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\Omega$ un ouvert de $\mathbb{R}^2$ et $f \in \mathcal{C}^1(\Omega, \mathbb{R})$. Soit $a \in \Omega$. La fonction $f$ possède un développement limité à l'ordre 1 au voisinage de $a$ :
+    $$f(a+v) \underset{v \rightarrow 0}{=} f(a)+\langle\nabla f(a), v\rangle+\mathrm{o}(\|v\|)$$
+    ce qui est équivalent à :
+    $$f(x) \underset{x \rightarrow a}{=} f(a)+\langle\nabla f(a), x-a\rangle+\mathrm{o}(\|x-a\|)$$
+    Si les variables de $f$ sont notées $x$ et $y$ et si $a=\left(x_a, y_a\right)$, cela revient à :
+    $$f\left(x_a+h, y_a+k\right) \underset{(h, k) \rightarrow(0,0)}{=} f(a)+\partial_1 f(a) \cdot h+\partial_2 f(a) \cdot k+\mathrm{o}(\|(h, k)\|)$$
+\end{tcolorbox}
+
+\noindent Par translation, on le montre pour $a = 0$. \\
+On pose $v = (h, k)\in \mathbb{R}^2$. \\
+Par hypothèse, $f\in \mathcal{C}^1(\Omega, \mathbb{R})$, $\partial_1f$ et $\partial_2f$ sont continues. \\
+Siot $\epsilon > 0$, il existe $r > 0$ tel que :
+\begin{align*}
+    \forall v\in B(0, r), &|\partial_1f(v) - \partial_1f(0)| < \epsilon \\
+    &|\partial_2f(v) - \partial_2f(0)| < \epsilon
+\end{align*}
+On a : 
+\begin{align*}
+    |f(v) - f(0) - \langle \nabla f(0), v\rangle| &= |f(v) - f(0) - \partial_1f(0)h - \partial_2f(0)k| \\
+    &= |f(h, k) - f(h, 0) + f(h, 0) - f(0, 0) - \partial_1f(0)h - \partial_2f(0)k| \\
+    &= \left| \int_{0}^{k} \partial_2 f(h, t) \,dt - \partial_2 f(0) k + \int_{0}^{h} \partial_{1} f(t, 0) \,dt - \partial_1 f(0) h \right| \\
+    \text{(Inégalité triangulaire x3)}\quad &\leq \int_{0}^{k} |\partial_2 f(h, t) - \partial_2 f(0)| \,dt+ \int_{0}^{h} |\partial_{1} f(t, 0) - \partial_1 f(0)| \,dt
+\end{align*}
+Pour $v\in B(0, r)$ : 
+\begin{align*}
+    \forall t\in [0, k], (0, t) &\in B(0, r) \\
+    \forall t\in [0, h], (h, t) &\in B(0, r)
+\end{align*}
+Ainsi : 
+\begin{align*}
+    |f(v) - f(0) - \langle \nabla f(0), v\rangle| &\leq \epsilon \times h + \epsilon \times k \\
+    &\leq \epsilon |h| + \epsilon |k| \\
+    &\leq 2\epsilon \|v\|
+\end{align*}
+En conlusion, $f(v) - f(0) - \langle \nabla f(0), v\rangle = o(\|v\|)$. 
+
+
 \end{document}
