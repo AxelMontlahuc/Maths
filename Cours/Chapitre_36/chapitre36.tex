@@ -127,7 +127,11 @@ En conlusion, $f(v) - f(0) - \langle \nabla f(0), v\rangle = o(\|v\|)$.
 \setsection{41}
 \section{Règle de la chaîne}
 \begin{tcolorbox}[title=Théorème 36.42, title filled=false, colframe=orange, colback=orange!10!white]
-    Soit $\Omega$ un ouvert
+    Soit $\Omega$ un ouvert de $\mathbb{R}^2$, $I$ un intervalle et $f\in \mathcal{C}^1(\Omega, \mathbb{R})$. Soit $x$ et $y$ dans $\mathcal{C}^1(I, \mathbb{R})$ deux fonctions pour lesquelles pour tout $t\in I$, $(x(t), y(t))\in \Omega$. \\
+    La fonction $F:t f(x(t), y(t))$ est de classe $\mathcal{C}^1(I, \mathbb{R})$ sur $I$ et pour tout $t\in I$ : 
+    \begin{align*}
+        F'(t) &= x'(t) \partial_1 f(x(t), y(t)) + y'(t) \partial_2 f(x(t), y(t))
+    \end{align*}
 \end{tcolorbox}
 
 \noindent $f\in \mathcal{C}^1(\Omega, \mathbb{R})$ donc possède un $\operatorname{DL}_1(t)$ en tout point. \\
@@ -163,6 +167,18 @@ Donc $F$ possède un $\operatorname{DL}_1(t)$, donc $F\in \mathcal{D}^1(I, \math
     &\in \mathcal{C}^0(I, \mathbb{R}) \text{ par opérations}
 \end{align*}
 Donc $F\in \mathcal{C}^1(I, \mathbb{R})$. 
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 36.43, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $f\in \mathcal{C}^1(\mathbb{R}^2, \mathbb{R})$. Montrer que $f(t^2, \sin t)$ est de classe $\mathcal{C}^1(\mathbb{R}, \mathbb{R})$ et déterminer sa dérivée.
+\end{tcolorbox}
+
+\noindent $f\in \mathcal{C}^1(\mathbb{R}^2, \mathbb{R})$ .\\
+$t\mapsto t^2, \sin \in \mathcal{C}^1(\mathbb{R}, \mathbb{R})$. \\
+D'après la règle de la chaîne, $F\in \mathcal{C}^1(\mathbb{R}^2, \mathbb{R})$ et : 
+\begin{align*}
+    \forall t\in \mathbb{R}, F'(t) &= 2t \partial_1 f(t^2, \sin t) + \cos t \partial_2 f(t^2, \sin t)
+\end{align*}
 
 
 \end{document}
