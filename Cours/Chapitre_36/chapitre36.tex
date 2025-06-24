@@ -243,6 +243,40 @@ D'après la règle de la chaîne, $F\in \mathcal{C}^1(\mathbb{R}^2, \mathbb{R})$
     avec égalité si et seulement si $v$ est colinéaire à $\nabla f(a)$ (et positif si te seulement si $v$ est positivement linéaire à $\nabla f(a)$). 
 \end{enumerate}
 
+\setsection{48}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 36.49, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Résoudre l'équation suivante, d'inconnue $f \in \mathcal{C}^1(\Omega, \mathbb{R})$ où $\Omega=\mathbb{R}^2 \backslash\{(0,0)\}$ :
+    $$y \partial_1 f=x \partial_2 f$$
+    avec la condition :
+    $$\forall x>0, f(x, 0)=\mathrm{e}^{-x}$$
+\end{tcolorbox}
+
+\noindent On pose $g(r, \theta) = f(r \cos \theta, r \sin \theta \in \mathcal{C}^1)$. \\
+On calcule : 
+\begin{align*}
+    \partial_1 g(r, \theta) &= \cos\theta \partial_1 f(r \cos \theta, r \sin \theta) + \sin\theta \partial_2 f(r \cos \theta, r \sin \theta) \\
+    \partial_2 g(r, \theta) &= -r \sin\theta \partial_1 f(r \cos \theta, r \sin \theta) + r \cos\theta \partial_2 f(r \cos \theta, r \sin \theta) \\
+    &= 0 \text{ par hypothèse}
+\end{align*}
+Il existe donc $h\in \mathcal{C}^1(\mathbb{R}_+^*, \mathbb{R})$ tel que : 
+\begin{align*}
+    \forall (r, \theta), g(r, \theta) &= h(r)
+\end{align*}
+Par condition initiale : 
+\begin{align*}
+    g(r, 0) &= f(x, 0) = e^{-x} = e^{-r}
+\end{align*}
+Donc : 
+\begin{align*}
+    \forall (r, \theta), g(r, \theta) &= e^{-r}
+\end{align*}
+Concusion : 
+\begin{align*}
+    \forall (x, y)\neq (0, 0), f(x, y) &= e^{-\sqrt{x^2 + y^2}}
+\end{align*}
+\underline{Synthèse :} ça marche
+
 \setsection{50}
 \section{Points critiques et extrema locaux}
 \begin{tcolorbox}[title=Théorème 36.51, title filled=false, colframe=orange, colback=orange!10!white]
