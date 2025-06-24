@@ -180,5 +180,68 @@ D'après la règle de la chaîne, $F\in \mathcal{C}^1(\mathbb{R}^2, \mathbb{R})$
     \forall t\in \mathbb{R}, F'(t) &= 2t \partial_1 f(t^2, \sin t) + \cos t \partial_2 f(t^2, \sin t)
 \end{align*}
 
+\setsection{45}
+\section{Règle de la chaîne, dérivées directionnelle et gradient}
+\begin{tcolorbox}[title=Théorème 36.46, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\Omega$ un ouvert de $\mathbb{R}^2$ et $f \in \mathcal{C}^1(\Omega, \mathbb{R})$.
+    \begin{enumerate}
+        \item Soit $I$ un intervalle de $\gamma \in \mathcal{C}^1\left(I, \mathbb{R}^2\right)$ une fonction pour laquelle $\gamma(I) \subset \Omega$. La fonction $f \circ \gamma$ est de classe $\mathcal{C}^1$ sur $I$ et pour tout $t \in I$ :
+        $$(f \circ \gamma)^{\prime}(t)=\left\langle\nabla f(\gamma(t)), \gamma^{\prime}(t)\right\rangle$$
+
+        \item La fonction $f$ possède une dérivée directionnelle en tout point de $\Omega$ et dans toutes les directions. Plus précisément, pour tout $a \in \Omega$, tout $v=(h, k) \in \mathbb{R}^2$ :
+        $$\mathrm{D}_v f(a)=\langle\nabla f(a), v\rangle=\partial_1 f(a) . h+\partial_2 f(a) . k$$
+
+        \item Interprétation du gradient : le gradient de $f$ est orthogonal aux lignes de niveau de $f$ et dirigé dans le sens des pentes croissantes.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item RAF
+    \item Soit $a\in \Omega$ et $v\in \mathbb{R}^2$. Comme $\Omega$ est ouvert, il existe $I = ]-\alpha, \alpha[$ tel que : 
+    \begin{align*}
+        &I\to \mathbb{R} \\
+        &t\mapsto f(a + tv) = f(x_a + th, y_a + tk)
+    \end{align*}
+    est bien définie et est de classe $\mathcal{C}^1$ d'après la règle de la chaîne ($t\mapsto x_a + th\in \mathcal{C}^1(I), t\mapsto y_a + tk\in \mathcal{C}^1(I)$). 
+    \begin{align*}
+        \forall t\in I, g'(t) &= h \partial_1 f(a + tv) + k \partial_2 f(a + tv)
+    \end{align*}
+    Ainsi : 
+    \begin{align*}
+        D_v f(a) &= g'(a) \\
+        &= h \partial_1 f(a) + k \partial_2 f(a) \\
+        &= \langle \nabla f(a), v\rangle
+    \end{align*}
+
+    \item Notons $P_\lambda: z = \lambda$ pour $\lambda \in \mathbb{R}$. 
+    \begin{align*}
+        S = \{ (x, y, f(x, y)) \mid (x, y)\in \Omega \}
+    \end{align*}
+    Une line de niveau $\lambda$ est l'ensemble des solutions de $f(x, y) = \lambda$. \\
+    Soit $P_\lambda\cap S$. On suppose que $P_\lambda\cap S \neq \emptyset$ et que $P_\lambda\cap S$ n'est pas un singleton. \\
+    Soit $a\in P_\lambda\cap S$. On admet qu'il existe $I = ]-\alpha, \alpha[$ et $\gamma\in \mathcal{C}^1(I, \mathbb{R})$ tel que :
+    \begin{align*}
+        \begin{cases}
+            \gamma(0) = a \\
+            \gamma(I) \subset P_\lambda\cap S
+        \end{cases}
+    \end{align*}
+    On a donc : 
+    \begin{align*}
+        \forall t\in I, f\circ \gamma(t) = \lambda
+    \end{align*}
+    D'après la règle de la chaîne ($f\in \mathcal{C}^1, \gamma\in \mathcal{C}^1$) : 
+    \begin{align*}
+        \forall t\in I, \langle \nabla f(\gamma(t)), \gamma'(t)\rangle (f\circ \gamma)'(t) &= 0
+    \end{align*}
+    Donc $\nabla f(\gamma(a))$ est bien orthogonal à $\gamma'(a)$ (vecteur tangent à $P_\lambda\cap S$ en $a$). \\
+    D'après (2) pour tout $v\in \mathbb{R}^2$ : 
+    \begin{align*}
+        |D_v f(a)| &= |\langle \nabla f(a), v\rangle| \\
+        &\leq \| \nabla f(a) \| \|v\|
+    \end{align*}
+    avec égalité si et seulement si $v$ est colinéaire à $\nabla f(a)$ (et positif si te seulement si $v$ est positivement linéaire à $\nabla f(a)$). 
+\end{enumerate}
+
 
 \end{document}
