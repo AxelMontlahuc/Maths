@@ -287,5 +287,32 @@ Pour $(x, y)\in \mathbb{R}^2$ :
 \end{align*}
 Donc $f(2, -1)$ est bin le seul minimum global. 
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 36.53, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que la fonction $f:(x, y) \mapsto x^2-x-x y-\frac{y^2}{2}+2 y$ ne possède aucun extremum local sur $\mathbb{R}^2$.
+\end{tcolorbox}
+
+\begin{align*}
+    \begin{cases}
+        \partial_1 f(x, y) = 0 \\
+        \partial_2 f(x, y) = 0
+    \end{cases} \Leftrightarrow \begin{cases}
+        2x - 1 - y = 0 \\
+        -x - y + 2 = 0
+    \end{cases} \Leftrightarrow \begin{cases}
+        x = 1 \\
+        y = 1
+    \end{cases}
+\end{align*}
+\begin{align*}
+    f(1 + x, 1 + y) - f(1, 1) &= (1 + x)^2 - (1 + x) - (1 + x)(1 + y) - \frac{1}{2}(1 + y)^2 + 2(1 + y) - f(1, 1) \\
+    &= 2x + x^2 - x - x - y - xy - y - \frac{y^2}{2} + 2y \\
+    &= x^2 - xy - \frac{y^2}{2} \\
+    &= (x - \frac{y}{2})^2 - \frac{y^2}{4} - \frac{y^2}{2} \\
+    \forall x\neq 0, d(x, 2x) &< 0 \\
+    d(x, 0) &> 0
+\end{align*}
+$f(1, -1)$ n'est pas un minimum ni un maximum. 
+
 
 \end{document}
