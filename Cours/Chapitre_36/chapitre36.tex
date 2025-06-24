@@ -124,5 +124,45 @@ Ainsi :
 \end{align*}
 En conlusion, $f(v) - f(0) - \langle \nabla f(0), v\rangle = o(\|v\|)$. 
 
+\setsection{41}
+\section{Règle de la chaîne}
+\begin{tcolorbox}[title=Théorème 36.42, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\Omega$ un ouvert
+\end{tcolorbox}
+
+\noindent $f\in \mathcal{C}^1(\Omega, \mathbb{R})$ donc possède un $\operatorname{DL}_1(t)$ en tout point. \\
+Soit $t\in I$ et $h\in \mathbb{R}$ : 
+\begin{align*}
+    F(t + h) &= f(x((t + h), y(t + h))) \\
+    &= \underbrace{f(x(t + h), y(t + h)) - (x(t), y(t))}_{\underset{h \to +\infty}{\longrightarrow} 0} + (x(t), y(t)) \\
+    \text{(36.36) } &= f(x(t), y(t)) + \langle \nabla f(x(t), y(t)), (x(t + h), y(t + h)) - (x(t), y(t))\rangle + o(\|(x(t + h) - x(t), y(t + h) - y(t))\|)
+\end{align*}
+On a : 
+\begin{align*}
+    \begin{cases}
+        x(t + h) - x(t) &\underset{h\to 0}{=} h x'(t) + o(h) \underset{h\to 0}{=} O(h) \\
+        y(t + h) - y(t) &\underset{h\to 0}{=} h y'(t) + o(h) \underset{h\to 0}{=} O(h)
+    \end{cases}
+\end{align*}
+Donc : 
+\begin{align*}
+    o(\| (x(t + h) - x(t), y(t + h) - y(t) \|) &\underset{h\to 0}{=} o(\|O(h), O(h)\|) \\
+    &\underset{h\to 0}{=} o(h)
+\end{align*}
+Et : 
+\begin{align*}
+    \langle \nabla f(x(t), y(t)), (x(t + h) - x(t), y(t + h) - y(t))\rangle &= \partial_1 f(x(t), y(t)) h x'(t) + \partial_2 f(x(t), y(t)) h y'(t) + o(h)
+\end{align*}
+En conclusion : 
+\begin{align*}
+    F(t + h) &\underset{h\to 0}{=} F(t) + h [ \partial_1 f(x(t), y(t)) x'(t) + \partial_2 f(x(t), y(t)) y'(t) ] + o(h)
+\end{align*}
+Donc $F$ possède un $\operatorname{DL}_1(t)$, donc $F\in \mathcal{D}^1(I, \mathbb{R})$ et :
+\begin{align*}
+    \forall t, F'(t) &= \partial_1 f(x(t), y(t)) x'(t) + \partial_2 f(x(t), y(t)) y'(t) \\
+    &\in \mathcal{C}^0(I, \mathbb{R}) \text{ par opérations}
+\end{align*}
+Donc $F\in \mathcal{C}^1(I, \mathbb{R})$. 
+
 
 \end{document}
